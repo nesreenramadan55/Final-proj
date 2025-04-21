@@ -1,4 +1,5 @@
 
+
 :root {
     --primary: #6a11cb;
     --secondary: #2575fc;
@@ -145,7 +146,6 @@
     transform: scale(1.05);
   }
   
-  /* Quiz Content */
   #quiz-title {
     font-size: 1.6em;
     font-weight: bold;
@@ -192,7 +192,6 @@
     color: white;
   }
   
-  /* Result & Scores */
   #result-container {
     margin-top: 30px;
     padding: 20px;
