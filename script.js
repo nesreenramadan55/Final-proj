@@ -1,10 +1,7 @@
-// script.js
 
-// Admin credentials
 const ADMIN_EMAIL = "admin@quiz.com";
 const ADMIN_PASSWORD = "admin123";
 
-// DOM Elements
 let currentQuiz = null;
 let currentQuizData = null;
 let selectedAnswers = [];
@@ -37,10 +34,8 @@ const logoutAdminBtn = document.getElementById("logout-admin-btn");
 const tabBtns = document.querySelectorAll(".tab-btn");
 const tabContents = document.querySelectorAll(".tab-content");
 
-// App State
 let currentUser = null;
 
-// Initial Quizzes
 const initialQuizzes = [
   {
     id: 1,
@@ -66,9 +61,7 @@ const initialQuizzes = [
   }
 ];
 
-// Initialize App
 function initApp() {
-  // Save quizzes to localStorage once
   if (!localStorage.getItem("quizzes")) {
     localStorage.setItem("quizzes", JSON.stringify(initialQuizzes));
   }
@@ -249,15 +242,12 @@ function showHomeScreen() {
         optionEl.setAttribute("data-option-index", optionIndex);
   
         optionEl.addEventListener("click", () => {
-          // Deselect all
           const allOptions = questionEl.querySelectorAll(".option");
           allOptions.forEach(o => o.classList.remove("selected"));
   
-          // Select current
           optionEl.classList.add("selected");
           selectedAnswers[questionIndex] = optionIndex;
-  
-          // Auto-move
+
           if (questionIndex < currentQuizData.questions.length - 1) {
             setTimeout(() => {
               questionEl.style.display = "none";
